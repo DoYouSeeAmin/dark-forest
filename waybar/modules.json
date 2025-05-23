@@ -1,0 +1,99 @@
+{
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": "󰮯",
+            "urgent": "󰊠"
+        },
+        "persistent_workspaces": {
+            "*": 5
+        }
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [ "network", "pulseaudio" ]
+    },
+
+    "group/systray": {
+        "orientation": "horizontal",
+        "modules": [ "tray", "custom/clipboard" ]
+    },
+
+    "group/clockcpu": {
+        "orientation": "horizontal",
+	"modules": [ "clock#time", "cpu", "memory"]
+    },
+
+    "clock#date": {
+    	"format": "{:%u.%d  %b %Y}",
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰤨   {essid} {bandwidthTotalBytes}",
+        "format-ethernet": "󱓞 Ethernet {bandwidthTotalBytes}",
+        "format-disconnected": "󰤭 Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "󰤢   Signal Strength:  {signalStrength}%",
+        "tooltip-format-ethernet": "󰊗   Signal Strength:  {signalStrength}%",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "interval": 5
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "scroll-step": 5,
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                " "
+            ]
+        }
+    },
+
+    "custom/clipboard": {
+        "format": "",
+        "on-click": "cliphist list | rofi -dmenu -p 'Clipboard history:' | cliphist decode | wl-copy",
+        "tooltip": true,
+        "tooltip-format": "Clipboard history"
+    },
+
+    "clock#time": {
+        "format": "{:%R}",
+        "on-click": "rofi -disable-history -show drun",
+	"tooltip": false
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%",
+        "max-length": 10,
+	"on-click": "kitty btop"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {used:0.1f}G/{total:0.1f}G"
+    },
+
+    "tray": {
+        "icon-size": 19,
+        "spacing": 9
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "shutdown now",
+        "on-click-right": "reboot"
+    },
+}

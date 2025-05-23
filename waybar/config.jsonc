@@ -1,0 +1,21 @@
+{
+    "include": "~/.config/waybar/modules.json",
+    "layer": "top",
+    "position": "top",
+    "height": 33,
+    "width": 1912,
+    "margin": "4 0 0 0",
+    "spacing": 4,
+    "modules-left": [
+        "group/clockcpu",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+	"clock#date"
+    ],
+    "modules-right": [
+        "group/systray",
+        "group/system",
+        "custom/power"
+    ],
+}

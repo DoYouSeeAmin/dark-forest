@@ -1,0 +1,107 @@
+@import url("./colors.css");
+
+* {
+    font-family: "Rubik", "JetBrainsMono Nerd Font";
+    font-size: 12pt;
+    font-weight: 400;
+}
+
+window#waybar {
+    color: @fg;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: transparent
+}
+
+#custom-clipboard {
+    padding-left: 0px;
+    padding-right: 12px;
+    color: @font
+}
+
+#systray {
+    background: @bg;
+    border-radius: 0px;
+    border: 2px solid @inactive;
+}
+
+#system {
+    background: @bg;
+    border-radius: 0px;
+    border: 2px solid @inactive;
+}
+
+#clock.date {
+    background: @bg;
+    border: 2px solid @inactive;
+    border-radius: 0px;
+    padding-bottom: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: @font
+}
+
+#workspaces {
+    background: @bg;
+    border: 2px solid @inactive;
+    border-radius: 0px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px
+}
+
+#workspaces button {
+    min-width: 14px;
+    padding: 0 7px;
+    color: @inactive;
+    transition: color 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @green;
+}
+
+#workspaces button:hover {
+    color: @fg-darker;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent
+}
+
+#tray {
+    padding-left: 8px;
+    padding-right: 7px
+}
+
+#network {
+    padding-left: 10px;
+    font-size: 11pt;
+    padding-right: 10px;
+    color: @green
+}
+
+#pulseaudio {
+    font-size: 11pt;
+    padding-right: 10px;
+    color: @yellow
+}
+
+#clockcpu {
+    background: @bg;
+    border: 2px solid @inactive;
+    border-radius: 0px;
+    padding-bottom: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: @font
+}
+
+#custom-power {
+    background-color: @red;
+    color: @bg;
+    padding-right: 11px;
+    padding-left: 9px;
+    font-size: 15pt;
+    border: 2px solid #4e3335;
+    border-radius: 0px
+}
